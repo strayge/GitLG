@@ -4,7 +4,7 @@
 		<div v-if="commit.hash" class="info flex-1 row gap-20">
 			<div class="subject-wrapper flex-1 row align-center">
 				<div :style="commit.branch? {color:commit.branch.color} : undefined" class="vis-ascii-circle vis-resize-handle" @mousedown="vis_resize_handle_mousedown">
-					●&nbsp;
+					{{ commit.virtual_commit_type ? '○' : '●' }}&nbsp;
 				</div>
 				<commit-ref-tips class="flex-noshrink" :commit="commit" :allow_wrap="false" :show_buttons="false" />
 				<div class="subject">
